@@ -9,22 +9,9 @@ HOST: https://arvo.erp.uno
 
 + Request (application/json)
     + Attributes (object)
-        + `id`: `d290f1ee-6c54-4b01-90e6-d701748f0851` (string, required) - Identifier of person that is accosiated with user who initiated access token generation
-        + `request_number` (string, required)
+        + `id`: `7017480851` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
         + `status` (string, required)
-        + `created_at` (string, optional)
-        + `dispense_valid_from` (string, optional)
-        + `hospital_name` (string, required)
-        + `employee_name` (string, required)
-        + `patient_id` (number, required)
-        + `rnokpp` (number, required)
-        + `unzr` (number, required)
-        + `patient_name` (number, required)
-        + `patient_age` (number, required)
-        + `medicine` (string, required)
-        + `medication_qty` (string, required)
-        + `dosage_instruction` (string, required)
-        + `sign` (string, required)
+        + `signature` (string, required)
 
 + Response 201 (application/json)
     + Attributes (`Prescription`)
