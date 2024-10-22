@@ -13,12 +13,11 @@ hidden behind simple and clean HTTP AR.VO API.
 
 <b>Data Structures</b>: CSR, Certificate, Person, Avatar, Computer, Service, Network.
 
-### Client Certificate Request [POST]
+### Enroll Certificate [POST]
 
 + Request (application/json)
     + Attributes (object)
-        + `id`: `7017480851` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
-        + `status` (string, required)
+        + `csr` (string, required) - Base64 CSR in ASN.1
         + `signature` (string, required)
 
 + Response 201 (application/json)
