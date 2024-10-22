@@ -288,6 +288,24 @@ HOST: https://arvo.computer
 + Response 500 (application/json)
     + Attributes (`Error`)
 
+### Retrieve Index Map [GET /api/store/{id}/index]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Gem`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
 ### Retrieve Gem [GET /api/store/{id}/get]
 
 + Request (application/json)
