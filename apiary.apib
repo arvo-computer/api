@@ -333,7 +333,25 @@ Gems that represents published works in global space.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Search Gems [GET /api/store/{id}/search]
+### Search Gems [GET /api/store/search]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Gem`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Retrieve Gem [GET /api/store/{id}/get]
 
 + Request (application/json)
     + Attributes (object)
