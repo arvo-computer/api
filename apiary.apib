@@ -373,14 +373,12 @@ may be managed by different authority.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Gem Interaction [PUT /api/space/{id}/activate]
+### WebSocket Stream RT [GET /api/space/{id}/stream]
 
 + Request (application/json)
-    + Attributes (object)
-        + `id`: `7017480851` (number, required) - Identifier of the process
 
 + Response 201 (application/json)
-    + Attributes (`Process`)
+    + Attributes (`Gem`)
 
 + Response 400 (application/json)
     + Attributes (`Error`)
@@ -391,12 +389,14 @@ may be managed by different authority.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### WebSocket Stream RT [GET /api/space/{id}/stream]
+### Gem Interaction [PUT /api/space/{id}/activate]
 
 + Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
 
 + Response 201 (application/json)
-    + Attributes (`Gem`)
+    + Attributes (`Process`)
 
 + Response 400 (application/json)
     + Attributes (`Error`)
