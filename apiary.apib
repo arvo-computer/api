@@ -229,25 +229,7 @@ presented as AR.VO Logic API. All predefined and user contracts are managed as p
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Suspend Process [POST /api/logic/{id}/suspend]
-
-+ Request (application/json)
-    + Attributes (object)
-        + `id`: `7017480851` (number, required) - Identifier of the process
-
-+ Response 201 (application/json)
-    + Attributes (`Process`)
-
-+ Response 400 (application/json)
-    + Attributes (`Error`)
-
-+ Response 422 (application/json)
-    + Attributes (`ValidationError`)
-
-+ Response 500 (application/json)
-    + Attributes (`Error`)
-
-### Resume Process [POST /api/logic/{id}/resume]
+### Amend Process [POST /api/logic/{id}/amend]
 
 + Request (application/json)
     + Attributes (object)
