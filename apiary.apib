@@ -125,6 +125,24 @@ HOST: https://arvo.computer
 + Response 500 (application/json)
     + Attributes (`Error`)
 
+### Terminate Resource [POST /api/logic/{id}/terminate]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Resource`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
 ## Logic [/api/logic]
 
 ### Create Process Definition [POST /api/logic/definition]
@@ -232,6 +250,24 @@ HOST: https://arvo.computer
 + Response 500 (application/json)
     + Attributes (`Error`)
 
+### Terminate Process [POST /api/logic/{id}/terminate]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Process`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
 ## Store [/api/store]
 
 ### Publish Gem [POST /api/store]
@@ -306,23 +342,6 @@ HOST: https://arvo.computer
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Resume Process [POST /api/logic/{id}/resume]
-
-+ Request (application/json)
-    + Attributes (object)
-        + `id`: `7017480851` (number, required) - Identifier of the process
-
-+ Response 201 (application/json)
-    + Attributes (`Process`)
-
-+ Response 400 (application/json)
-    + Attributes (`Error`)
-
-+ Response 422 (application/json)
-    + Attributes (`ValidationError`)
-
-+ Response 500 (application/json)
-    + Attributes (`Error`)
 
 # Data Structures
 
