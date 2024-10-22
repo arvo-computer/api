@@ -297,11 +297,11 @@ presented as AR.VO Logic API. All predefined and user contracts are managed as X
 Virtual worlds that represents Spaces contains interactive
 Gems that represents published works in global space.
 
-### Publish Gem [POST /api/store]
+### Enter Space [GET /api/store/space]
 
 + Request (application/json)
     + Attributes (object)
-        + `id`: `7017480851` (number, required) - Identifier of the process
+        + `id`: `IVA` (number, required) - Identifier of the space
 
 + Response 201 (application/json)
     + Attributes (`Gem`)
@@ -315,7 +315,7 @@ Gems that represents published works in global space.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Retrieve Space [GET /api/store/{id}/index]
+### Publish Gem [POST /api/store]
 
 + Request (application/json)
     + Attributes (object)
