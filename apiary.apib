@@ -13,7 +13,7 @@ hidden behind simple and clean HTTP AR.VO API.
 
 <b>Data Structures</b>: CSR, Certificate, Person, Avatar, Computer, Service, Network.
 
-### Create Certificate [POST]
+### Client Certificate Request [POST]
 
 + Request (application/json)
     + Attributes (object)
@@ -33,7 +33,7 @@ hidden behind simple and clean HTTP AR.VO API.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Check Certificate [PATCH /api/authority/{id}/check]
+### Validate Certificate [PATCH /api/authority/{id}/validate]
 
 + Request (application/json)
     + Attributes
@@ -111,7 +111,7 @@ is done in ISO/HL7 FHIR fashion based on AR.VO Schema.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Create Resource [POST /api/memory]
+### Allocate Resource [POST /api/memory]
 
 + Request (application/json)
     + Attributes (object)
@@ -204,7 +204,7 @@ presented as AR.VO Logic API. All predefined and user contracts are managed as X
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Create Process [POST /api/logic]
+### Spawn Process [POST /api/logic]
 
 + Request (application/json)
     + Attributes (`Process`)
