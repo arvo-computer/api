@@ -133,7 +133,7 @@ HOST: https://arvo.erp.uno
     + Attributes (`ProcessDefinition`)
 
 + Response 201 (application/json)
-    + Attributes (`Certificate`)
+    + Attributes (`ProcessDefinition`)
 
 + Response 400 (application/json)
     + Attributes (`Error`)
@@ -150,7 +150,42 @@ HOST: https://arvo.erp.uno
     + Attributes (`Process`)
 
 + Response 201 (application/json)
-    + Attributes (`Certificate`)
+    + Attributes (`Process`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Process Edge [POST /api/logic/{id}/next]
+
++ Request (application/json)
+    + Attributes (`Process`)
+
++ Response 201 (application/json)
+    + Attributes (`Edge`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Retrieve Process [POST /api/logic/{id}]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Process`)
 
 + Response 400 (application/json)
     + Attributes (`Error`)
@@ -176,6 +211,11 @@ HOST: https://arvo.erp.uno
 + `parent` (string, required)
 
 ## Process (object)
++ `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
++ `status` (string, required)
++ `parent` (string, required)
+
+## Edge (object)
 + `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
 + `status` (string, required)
 + `parent` (string, required)
