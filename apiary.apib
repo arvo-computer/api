@@ -11,6 +11,8 @@ that include CA, СMP, OCSP, TSP servers
 with CMC/EST enrollment ASN.1 protocols
 hidden behind simple and clean HTTP AR.VO API.
 
+<b>Schema Objects</b>: CSR, Certificate, Person, Avatar, Computer, Service, Network.
+
 ### Create Certificate [POST]
 
 + Request (application/json)
@@ -86,6 +88,8 @@ objects in JSON Schema Draft-07 verifiable format. Each type of objects
 can be handled on diffferent nodes with different backends. Universality
 is done in ISO/HL7 FHIR fashion based on AR.VO Schema.
 
+<b>Schema Objects</b>: Asset, File, Message, Document, Product, Service, Application.
+
 ### Create Resource [POST]
 
 + Request (application/json)
@@ -159,6 +163,8 @@ is done in ISO/HL7 FHIR fashion based on AR.VO Schema.
 Distributed process pattern than should be described and managed
 as ISO 19510 BPMN model in correspondence to <a HREF="https://bpmn.io">bpmn.io</a> and Camunda
 presented as AR.VO Logic API. All predefined and user contracts are managed as XML defined BPMN processes.
+
+<b>Schema Objects</b>: ProcessDefinition, Process, Document, Edge, Node.
 
 ### Create Process Definition [POST /api/logic/definition]
 
