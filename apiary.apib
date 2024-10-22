@@ -178,7 +178,43 @@ HOST: https://arvo.computer
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Retrieve Process [POST /api/logic/{id}]
+### Retrieve Process [POST /api/logic/{id}/get]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Process`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Suspend Process [POST /api/logic/{id}/suspend]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Process`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Resume Process [POST /api/logic/{id}/resume]
 
 + Request (application/json)
     + Attributes (object)
@@ -198,6 +234,96 @@ HOST: https://arvo.computer
 
 ## Store [/api/store]
 
+### Publish Gem [POST /api/store]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Gem`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Delist Gem [POST /api/store/{id}/delist]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Gem`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Retrieve Gem [GET /api/logic/{id}/get]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Gem`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Activate Gem [PUT /api/store/{id}/activate]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Process`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Resume Process [POST /api/logic/{id}/resume]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of the process
+
++ Response 201 (application/json)
+    + Attributes (`Process`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
 # Data Structures
 
 ## Certificate (object)
@@ -216,6 +342,11 @@ HOST: https://arvo.computer
 + `parent` (string, required)
 
 ## Edge (object)
++ `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
++ `status` (string, required)
++ `parent` (string, required)
+
+## Gem (object)
 + `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
 + `status` (string, required)
 + `parent` (string, required)
