@@ -17,7 +17,7 @@ hidden behind simple and clean HTTP AR.VO API.
 
 + Request (application/json)
     + Attributes (object)
-        + `csr` (string, required) - Base64 CSR in ASN.1 DER
+        + `csr`: `MIIBXzCB5gIBADBAMQswCQYDVQQGEwJVQTE` (string, required) - Base64 CSR in ASN.1 DER
         + `abac`: abac:merchant:*,abac:vagrant:*,abac:freelancer:*,space:iva:* (array)
  
 + Response 201 (application/json)
@@ -419,7 +419,7 @@ may be managed by different authority.
 + `serial`: `984375` (number, required) - Identifier of certificate
 + `subject`: `arvo.computer` (string, required)
 + `cn` (string, required)
-+ `certificate` (string, required) - ASN.1 DER encoded certificate
++ `certificate`: `MIICQzCCAcqgAwIBAgIIYNcuIIw...` (string, required) - ASN.1 DER encoded certificate
 
 ## Resource (object)
 + `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
