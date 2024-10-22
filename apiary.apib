@@ -273,6 +273,7 @@ presented as AR.VO Logic API. All predefined and user contracts are managed as X
 + Response 500 (application/json)
     + Attributes (`Error`)
 
+
 ### Terminate Process [DELETE /api/logic/{id}/terminate]
 
 + Request (application/json)
@@ -380,6 +381,22 @@ may be managed by different authority.
 
 + Response 201 (application/json)
     + Attributes (`Process`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### WebSocket Gem Stream RT [GET /api/space/{id}/stream]
+
++ Request (application/json)
+
++ Response 201 (application/json)
+    + Attributes (`Gem`)
 
 + Response 400 (application/json)
     + Attributes (`Error`)
