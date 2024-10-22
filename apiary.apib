@@ -90,7 +90,28 @@ is done in ISO/HL7 FHIR fashion based on AR.VO Schema.
 
 <b>Schema Objects</b>: Asset, File, Message, Document, Product, Service, Application.
 
-### Create Resource [POST]
+### Register Schema [POST /api/memory/schema]
+
++ Request (application/json)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
+        + `resourceType` (string, required) - AR.VO Schema Object
+        + `status` (string, required)
+        + `signature` (string, required)
+
++ Response 201 (application/json)
+    + Attributes (`Resource`)
+
++ Response 400 (application/json)
+    + Attributes (`Error`)
+
++ Response 422 (application/json)
+    + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Create Resource [POST /api/memory]
 
 + Request (application/json)
     + Attributes (object)
