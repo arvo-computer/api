@@ -18,7 +18,7 @@ hidden behind simple and clean HTTP AR.VO API.
 + Request (application/json)
     + Attributes (object)
         + `csr` (string, required) - Base64 CSR in ASN.1 DER
-        + `abac`: abac:merchant,abac:vagrant,abac:freelancer (array)
+        + `abac`: abac:merchant:*,abac:vagrant:*,abac:freelancer:* (array)
  
 + Response 201 (application/json)
     + Attributes (`Certificate`)
@@ -50,7 +50,7 @@ hidden behind simple and clean HTTP AR.VO API.
 + Request (application/json)
     + Attributes
         + `csr`: (string, required) - CSR in ASN.1 DER Base64 encoded
-        + `abac`: abac:merchant,abac:vagrant,abac:freelancer (array)
+        + `abac`: abac:merchant:*,abac:vagrant:*,abac:freelancer:* (array)
 
 + Response 201 (application/json)
     + Attributes (`Certificate`)
