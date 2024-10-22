@@ -17,8 +17,9 @@ hidden behind simple and clean HTTP AR.VO API.
 
 + Request (application/json)
     + Attributes (object)
+        + `subject`: `arvo.computer` (array)
         + `csr`: `MIIBXzCB5gIBADBAMQswCQYDVQQGEwJVQTE...` (string, required) - Base64 CSR in ASN.1 DER
-        + `abac`: abac:merchant:*,abac:vagrant:*,abac:freelancer:*,space:iva:* (array)
+        + `abac`: *.merchant.abac,*.vagrant.abac,*.freelancer.abac,*.iva.community (array)
  
 + Response 201 (application/json)
     + Attributes (`Certificate`)
@@ -49,6 +50,7 @@ hidden behind simple and clean HTTP AR.VO API.
 
 + Request (application/json)
     + Attributes
+        + `alt_names`: `arvo.computer` (array)
         + `csr`: (string, required) - CSR in ASN.1 DER Base64 encoded
         + `abac`: abac:merchant:*,abac:vagrant:*,abac:freelancer:* (array)
 
@@ -417,8 +419,8 @@ may be managed by different authority.
 
 ## Certificate (object)
 + `serial`: `984375` (number, required) - Identifier of certificate
-+ `subject`: `arvo.computer` (string, required)
-+ `cn` (string, required)
++ `subject`: `arvo.computer` (array) - domain scope (subject)
++ `cn`: `/C=UA/L=Київ/O=AR.VO/CN=CA` (string, required) - CA CN
 + `certificate`: `MIICQzCCAcqgAwIBAgIIYNcuIIw...` (string, required) - ASN.1 DER encoded certificate
 
 ## Resource (object)
