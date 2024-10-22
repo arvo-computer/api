@@ -17,9 +17,8 @@ hidden behind simple and clean HTTP AR.VO API.
 
 + Request (application/json)
     + Attributes (object)
-        + `csr` (string, required) - Base64 CSR in ASN.1
-        + `signature` (string, required)
-
+        + `csr` (string, required) - Base64 CSR in ASN.1 DER
+ 
 + Response 201 (application/json)
     + Attributes (`Certificate`)
 
@@ -423,9 +422,10 @@ may be managed by different authority.
 # Data Structures
 
 ## Certificate (object)
-+ `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
-+ `status` (string, required)
-+ `content_info` (string, required)
++ `serial`: `984375` (number, required) - Identifier of certificate
++ `subject`: `arvo.computer` (string, required)
++ `cn` (string, required)
++ `certificate` (string, required) - ASN.1 DER encoded certificate
 
 ## Resource (object)
 + `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
