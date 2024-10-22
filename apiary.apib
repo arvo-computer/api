@@ -1,18 +1,19 @@
 FORMAT: 1A
-HOST: https://uc6.ehealth.gov.ua
+HOST: https://arvo.erp.uno
 
-# UC6 Potential
+# AR.VO Computer API
 
-## International ePrescriptions
+## Authority [/api/authority]
 
-International Electronic Prescriptions (Use Case 6).
+### Create Prescription [POST]
 
-### Create Prescription [PUT /api/prescriptions]
-Allocate and create electronic prescription at the edge near EHCS.
 + Request (application/json)
-    + Attributes (`Prescription`)
+    + Attributes (object)
+        + `id`: `7017480851` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
+        + `status` (string, required)
+        + `signature` (string, required)
 
-+ Response 200 (application/json)
++ Response 201 (application/json)
     + Attributes (`Prescription`)
 
 + Response 400 (application/json)
@@ -21,77 +22,69 @@ Allocate and create electronic prescription at the edge near EHCS.
 + Response 422 (application/json)
     + Attributes (`ValidationError`)
 
-+ Response 500
++ Response 500 (application/json)
+    + Attributes (`Error`)
 
-### Update Prescription [POST /api/prescriptions/{id}/change]
-Change status of electronic prescription.
+### Check Certificate [PATCH {id}/check]
+
 + Request (application/json)
     + Attributes
-        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Prescription Internal Identifier
-        + `status`: active, dispensed, expired, declined (enum, required) - Prescription Status
-        + `id_system` (string, optional) 
-        + `requested_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
+        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required)
+        + `status` (string, required)
+        + `changed_at` (string, required)
 
 + Response 200 (application/json)
     + Attributes (`Prescription`)
 
-+ Response 204 (application/json)
++ Response 204
+
++ Response 500 (application/json)
     + Attributes (`Error`)
 
-+ Response 500
+### Update Certificate [PATCH {id}/update]
 
-### Send Prescription to EUDI [POST /api/prescriptions/{id}/change2]
-Send electronic prescription to National Diia operator
-that communicates directly with EUDI Wallet and contains sensitive
-passport information.
 + Request (application/json)
     + Attributes
-        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Prescription Internal Identifier
-        
-+ Response 200 (application/json)
-    + Attributes (`Prescription`)
-        + `sent_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
-
-+ Response 204 (application/json)
-    + Attributes (`Error`)
-
-+ Response 500
-
-### Qualify Prescription [GET /api/prescriptions/{id}]
-Retrieve actual validated information about electronic prescription.
-+ Request (application/json)
-    + Attributes
-        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Identifier of Prescription
+        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required)
+        + `status` (string, required)
+        + `changed_at` (string, required)
 
 + Response 200 (application/json)
     + Attributes (`Prescription`)
 
-+ Response 204 (application/json)
++ Response 204
+
++ Response 500 (application/json)
     + Attributes (`Error`)
 
-+ Response 500
+### Revoke Certificate [DELETE {id}/revoke]
+
++ Request (application/json)
+    + Attributes
+        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required)
+        + `status` (string, required)
+        + `changed_at` (string, required)
+
++ Response 200 (application/json)
+    + Attributes (`Prescription`)
+
++ Response 204
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+## Memory [/api/memory]
+
+## Logic [/api/logic]
+
+## Store [/api/store]
 
 # Data Structures
 
-## Prescription (object)
-+ `id`: `d290f1ee-6c54-4b01-90e6-d701748f0851` (string, required) - Identifier of Prescription
-+ `request_number`: `M90H96.0` (string, required)
-+ `status`: base, active, dispensed, expired, declined (enum, required)
-+ `created_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
-+ `changed_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
-+ `dispense_valid_from`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
-+ `hospital_name` (string, required) - Human-readable Hospital name
-+ `employee_name` (string, required) - Human-readable Employee name
-+ `patient_id` (number, required) - Patient ID in EHCS
-+ `rnokpp` (number, required) — Ukrainian National Tax Id
-+ `unzr` (number, required) — Ukrainian National Person Id
-+ `patient_name` (number, required) - Human-readable Patient name
-+ `patient_age` (number, required) - Patient age
-+ `medicine` (string, required) - Prescription Object
-+ `medication_qty` (string, required) - Prescribed Quantity
-+ `dosage_instruction` (string, required) - Dosage Instructions
-+ `sign` (string, required) - ASN.1 DER ContentInfo/SignedData encoded in Base64
-+ `qr` (string, optional) - QR code information
+## Certificate (object)
++ `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
++ `status` (string, required)
++ `content_info` (string, required)
 
 ## ValidationError (Error)
 - `type`: `validation_error` (fixed)
