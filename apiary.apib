@@ -185,15 +185,15 @@ Distributed process pattern than should be described and managed
 as ISO 19510 BPMN model in correspondence to <a HREF="https://bpmn.io">bpmn.io</a> and Camunda
 presented as AR.VO Logic API. All predefined and user contracts are managed as XML defined BPMN processes.
 
-<b>Schema Objects</b>: ProcessDefinition, Process, Document, Edge, Node.
+<b>Schema Objects</b>: Contract, Process, Document, Edge, Node.
 
 ### Register Contract [POST /api/logic/contract]
 
 + Request (application/json)
-    + Attributes (`ProcessDefinition`)
+    + Attributes (`Contract`)
 
 + Response 201 (application/json)
-    + Attributes (`ProcessDefinition`)
+    + Attributes (`Contract`)
 
 + Response 400 (application/json)
     + Attributes (`Error`)
@@ -414,7 +414,7 @@ Gems that represents published works in global space.
 + `status` (string, required)
 + `parent` (string, required)
 
-## ProcessDefinition (object)
+## Contract (object)
 + `id`: `984375` (number, required) - Identifier of person that is accosiated with user who initiated access token generation
 + `status` (string, required)
 + `parent` (string, required)
