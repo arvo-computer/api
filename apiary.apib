@@ -160,7 +160,7 @@ is done in ISO/HL7 FHIR fashion based on AR.VO Schema.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Deallocate Resource [POST /api/memory/{id}/deallocate]
+### Deallocate Resource [DELETE /api/memory/{id}/deallocate]
 
 + Request (application/json)
     + Attributes (object)
@@ -273,7 +273,7 @@ presented as AR.VO Logic API. All predefined and user contracts are managed as X
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Terminate Process [POST /api/logic/{id}/terminate]
+### Terminate Process [DELETE /api/logic/{id}/terminate]
 
 + Request (application/json)
     + Attributes (object)
@@ -390,7 +390,7 @@ may be managed by different authority.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Retire Gem [POST /api/space/{id}/retire]
+### Retire Gem [DELETE /api/space/{id}/retire]
 
 + Request (application/json)
     + Attributes (object)
