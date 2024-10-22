@@ -292,12 +292,12 @@ presented as AR.VO Logic API. All predefined and user contracts are managed as X
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-## Store [/api/store]
+## Space [/api/space]
 
 Virtual worlds that represents Spaces contains interactive
 Gems that represents published works in global space.
 
-### Enter Space [GET /api/store/space]
+### Enter Space [GET /api/space/space]
 
 + Request (application/json)
     + Attributes (object)
@@ -333,7 +333,7 @@ Gems that represents published works in global space.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Search Gems [GET /api/store/search]
+### Search Gems [GET /api/space/search]
 
 + Request (application/json)
     + Attributes (object)
@@ -351,7 +351,7 @@ Gems that represents published works in global space.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Retrieve Gem [GET /api/store/{id}/get]
+### Retrieve Gem [GET /api/space/{id}/get]
 
 + Request (application/json)
     + Attributes (object)
@@ -369,7 +369,7 @@ Gems that represents published works in global space.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Gem Interaction [PUT /api/store/{id}/activate]
+### Gem Interaction [PUT /api/space/{id}/activate]
 
 + Request (application/json)
     + Attributes (object)
@@ -387,7 +387,7 @@ Gems that represents published works in global space.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Retire Gem [POST /api/store/{id}/retire]
+### Retire Gem [POST /api/space/{id}/retire]
 
 + Request (application/json)
     + Attributes (object)
